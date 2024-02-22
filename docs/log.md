@@ -5,7 +5,7 @@
 
 ---
 
-## 21-02-24 (2hrs 18min)
+## 21-02-24 (3hrs 32min)
 
 - [x] Continue the panel page.
 - [x] Skecth de main container.
