@@ -5,9 +5,10 @@
 
 ---
 
-## 21-02-24 (36min)
+## 21-02-24 (2hrs 18min)
 
 - [x] Continue the panel page.
-- [ ] Skecth de main container.
+- [x] Skecth de main container.
+- [x] Create the first row of the main form.
 
 ---

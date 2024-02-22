@@ -10,6 +10,8 @@
     <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/panel.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/606264bc57.js" crossorigin="anonymous"></script>
 
   </head>
   <body data-bs-theme="dark">
@@ -113,6 +115,83 @@
 
       <!-- Container -->
       <div class="container-fluid bg-light main-container">
+
+        <!-- General data input and Camera Row -->
+        <div class="row">
+
+          <!-- General data column -->
+          <div class="col-12 mt-3">
+
+            <!-- General data card -->
+            <div class="card bg-body-tertiary">
+
+              <!-- Card Header -->
+              <div class="card-header bg-body-tertiary">
+                <h5 class="card-title text-success-emphasis text-center">Recepcíon de Material</h5>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body">
+
+                <!-- Form -->
+                <form>
+
+                  <!-- Row -->
+                  <div class="row">
+
+                    <!-- Column Usuario -->
+                    <div class="col-lg-5 col-md-12">
+
+                      <!-- Form Group Usuario -->
+                      <div class="mb-3">
+                        <fieldset disabled>
+                          <div class="input-group">
+                            <span class="input-group-text" id="nombre_user"><i class="fa-solid fa-user text-success-emphasis"></i></span>
+                            <input type="text" id="username" class="form-control text-center" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="nombre_user">
+                          </div>
+                        </fieldset>
+                      </div>
+
+                    </div>
+
+                    <!-- Column Fecha -->
+                    <div class="col-lg-5 col-md-12">
+
+                      <!-- Form Group Fecha -->
+                      <div class="mb-3">
+                        <fieldset disabled>
+                          <div class="input-group">
+                            <span class="input-group-text" id="fecha"><i class="fa-regular fa-calendar-days text-success-emphasis"></i></span>
+                            <input type="text" id="date" class="form-control text-center" placeholder="21/02/2024">
+                          </div>
+                        </fieldset>
+                      </div>
+
+                    </div>
+
+                    <!-- Column Camera -->
+                    <div class="col-lg-2 col-md-12">
+
+                      <!-- Form Group Camera-->
+                      <div class="input-group mb-3">
+                        <div class="d-grid gap-2 col-12">
+                          <button type="button" class="btn btn-warning">Activar Cámara</button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
