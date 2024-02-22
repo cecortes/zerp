@@ -1,6 +1,6 @@
 .main-container {
   width: 98vw !important;
-  height: 90vh !important;
+  min-height: 90vh !important;
   background-color: rgb(173, 174, 172) !important;
   border-radius: 20px;
   margin-top: 8vh;

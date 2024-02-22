@@ -9,6 +9,7 @@
 
 - [x] Continue the panel page.
 - [x] Skecth de main container.
-- [x] Create the first row of the main form.
+- [x] Create the first row of the main form. (General Data and enable the camera)
+- [x] Create the second row of the main form. (Cards with the documents pictures)
 
 ---
