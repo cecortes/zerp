@@ -13,3 +13,9 @@
 - [x] Create the second row of the main form. (Cards with the documents pictures)
 
 ---
+
+## 22-02-25 ()
+
+- [x] Create the third row of the main form. (Pallets caps)
+
+---
