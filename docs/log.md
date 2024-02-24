@@ -19,3 +19,10 @@
 - [x] Create the third row of the main form. (Pallets caps)
 
 ---
+
+## 23-02-26 ()
+
+- [x] Create the fourth row of the main form. (Incident report)
+- [x] Create the fifth row of the main form. (inputs, the add button still missing)
+
+---
