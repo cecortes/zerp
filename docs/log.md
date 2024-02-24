@@ -20,7 +20,7 @@
 
 ---
 
-## 23-02-26 ()
+## 23-02-26 (1hr 28mim)
 
 - [x] Create the fourth row of the main form. (Incident report)
 - [x] Create the fifth row of the main form. (inputs, the add button still missing)
