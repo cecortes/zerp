@@ -26,3 +26,12 @@
 - [x] Create the fifth row of the main form. (inputs, the add button still missing)
 
 ---
+
+## 26-02-26 (28 min)
+
+- [x] Fix the size of code input.
+- [x] Add a button in the same row of the inputs.
+- [x] Create the sixth row of the main form. (The table with the entries)
+- [x] Make the table responsive.
+
+---
