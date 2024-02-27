@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ZMT de México ERP</title>
+
+    <!-- CSS Bootstrap -->
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/panel.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/606264bc57.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body data-bs-theme="dark">
+
+    <!-- Top Nav Collapse -->
+    <nav class="navbar bg-body-tertiary fixed-top">
+
+      <!-- Nav Container -->
+      <div class="container-fluid">
+
+        <!-- Title -->
+        <a class="navbar-brand" href="./index.html">ZMT de México</a>
+
+        <!-- Ham button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-end bg-tertiary" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+          <!-- Header -->
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-success-emphasis" id="offcanvasNavbarLabel">Menú</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <!-- Body -->
+          <div class="offcanvas-body">
+
+            <!-- Nav -->
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+              <!-- Nav Item Panel -->
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Panel</a>
+              </li>
+
+              <!-- Nav Item Historial -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">Historial</a>
+              </li>
+
+              <!-- Nav Item Reportes -->
+              <li class="nav-item dropdown">
+
+                <!-- Title Reportes -->
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Reportes
+                </a>
+
+                <!-- Dropdown Reportes -->
+                <ul class="dropdown-menu">
+
+                  <!-- Dropdown Item Por Fecha-->
+                  <li><a class="dropdown-item" href="#">Por fecha</a></li>
+
+                  <!-- Divider -->
+                  <li>
+                    <!-- Separator -->
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <!-- Dropdown Item Por Forja-->
+                  <li><a class="dropdown-item" href="#">Por tipo de forja</a></li>
+
+                  <!-- Divider -->
+                  <li>
+                    <!-- Separator -->
+                    <hr class="dropdown-divider">
+                  </li>
+
+                  <!-- Dropdown Item Por Resina -->
+                  <li><a class="dropdown-item" href="#">Por tipo de resina</a></li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+
+            <!-- Separator -->
+            <hr class="divider">
+
+            <!-- Search Form -->
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Búsqueda..." aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content d-flex align-items-center min-vh-100" id="panel">
+
+      <!-- Container -->
+      <div class="container-fluid bg-light main-container">
+
+        <!-- General data input and Camera Row -->
+        <div class="row">
+
+          <!-- General data column -->
+          <div class="col-12 mt-3">
+
+            <!-- General data card -->
+            <div class="card bg-body-tertiary">
+
+              <!-- Card Header -->
+              <div class="card-header bg-body-tertiary">
+                <h5 class="card-title text-success-emphasis text-center">Recepcíon de Material</h5>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body">
+
+                <!-- Form -->
+                <form>
+
+                  <!-- Row General Data And Camera -->
+                  <div class="row">
+
+                    <!-- Column Usuario -->
+                    <div class="col-lg-5 col-md-12">
+
+                      <!-- Form Group Usuario -->
+                      <div class="mb-3">
+                        <fieldset disabled>
+                          <div class="input-group">
+                            <span class="input-group-text" id="nombre_user"><i class="fa-solid fa-user text-success-emphasis"></i></span>
+                            <input type="text" id="username" class="form-control text-center" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="nombre_user">
+                          </div>
+                        </fieldset>
+                      </div>
+
+                    </div>
+
+                    <!-- Column Fecha -->
+                    <div class="col-lg-5 col-md-12">
+
+                      <!-- Form Group Fecha -->
+                      <div class="mb-3">
+                        <fieldset disabled>
+                          <div class="input-group">
+                            <span class="input-group-text" id="fecha"><i class="fa-regular fa-calendar-days text-success-emphasis"></i></span>
+                            <input type="text" id="date" class="form-control text-center" placeholder="21/02/2024">
+                          </div>
+                        </fieldset>
+                      </div>
+
+                    </div>
+
+                    <!-- Column Camera -->
+                    <div class="col-lg-2 col-md-12">
+
+                      <!-- Form Group Camera-->
+                      <div class="input-group mb-3">
+                        <div class="d-grid gap-2 col-12">
+                          <button type="button" class="btn btn-warning">Activar Cámara</button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </form>
+
+              </div>
+
+            </div>
+
+          </div> 
+
+        </div>
+
+        <!-- Row Scanned Docs -->
+        <div class="row">
+
+          <!-- Scanned docs column -->
+          <div class="col-12 mt-3">
+
+            <!-- Scanned docs card -->
+            <div class="card bg-body-tertiary">
+
+              <!-- Card Header -->
+              <div class="card-header bg-body-tertiary">
+                <h5 class="card-title text-success-emphasis text-center">Formatos de entrada</h5>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body text-center">
+
+                <!-- Row Scanned Cards -->
+                <div class="row">
+                  
+                  <!-- Cards First Column -->
+                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+  
+                    <!-- First Scanned Card -->
+                    <div class="card">
+  
+                      <!-- Card First Image -->
+                       <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*tam_EAXqOMcVBpYsUMwBxA.png" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Formato #1</p>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+  
+                  <!-- Cards Second Column -->
+                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+  
+                    <!-- Second Scanned Card -->
+                    <div class="card">
+  
+                      <!-- Card Second Image -->
+                      <img src="https://herothemes.com/wp-content/uploads/image-15-1024x612.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Formato #2</p>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+  
+                  <!-- Cards Third Column -->
+                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+  
+                    <!-- Third Scanned Card -->
+                    <div class="card">
+  
+                      <!-- Card Third Image -->
+                      <img src="https://herothemes.com/wp-content/uploads/image-15-1024x612.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Formato #3</p>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+  
+                  <!-- Cards Fourth Column -->
+                  <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+  
+                    <!-- Fourth Scanned Card -->
+                    <div class="card">
+  
+                      <!-- Card Fourth Image -->
+                      <img src="https://herothemes.com/wp-content/uploads/image-15-1024x612.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Formato #4</p>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Row Pallets Caps -->
+        <div class="row">
+
+          <!-- Pallets Caps colum -->
+          <div class="col-12 mt-3">
+
+            <!-- Pallets caps card -->
+            <div class="card bg-body-tertiary">
+
+              <!-- Card Header -->
+              <div class="card-header bg-body-tertiary">
+                <h5 class="card-title text-success-emphasis text-center">Capturas de Pallets / Material</h5>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body text-center">
+
+                <!-- Row Capture Pallets -->
+                <div class="row">
+
+                  <!-- Cards First Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- First Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card First Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #1</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Second Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Second Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Second Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #2</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Third Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Third Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Third Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #3</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Fourth Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Fourth Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Fourth Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #4</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Fifth Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Fifth Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Fifth Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #5</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Six Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Six Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Six Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #6</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Seven Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Seven Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Seven Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #7</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Eigth Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Eigth Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Eigth Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #8</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                  <!-- Cards Nine Column -->
+                  <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+
+                    <!-- Nine Pallets Card -->
+                    <div class="card">
+  
+                      <!-- Card Nine Image -->
+                      <img src="https://www.shutterstock.com/image-photo/packaging-boxes-stacked-on-pallets-600nw-2161925955.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Pallet #9</p>
+                      </div>
+  
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+              
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Row Incident Report -->
+        <div class="row">
+
+          <!-- Incident column -->
+          <div class="col-12 mt-3">
+
+            <!-- Incident card -->
+            <div class="card bg-body-tertiary">
+
+              <!-- Card Header -->
+              <div class="card-header bg-body-tertiary">
+                <h5 class="card-title text-success-emphasis text-center">Incidencias</h5>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body text-center">
+
+                <!-- Row Incident Cards -->
+                <div class="row">
+                  
+                  <!-- Cards First Column -->
+                  <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+  
+                    <!-- First Incident Card -->
+                    <div class="card">
+  
+                      <!-- Card First Image -->
+                       <img src="https://www.shutterstock.com/image-photo/broken-cargo-pallet-open-manhole-600nw-1849199212.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Incidencia 1</p>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+  
+                  <!-- Cards Second Column -->
+                  <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+  
+                    <!-- Second Incident Card -->
+                    <div class="card">
+  
+                      <!-- Card Second Image -->
+                      <img src="https://www.shutterstock.com/image-photo/broken-cargo-pallet-open-manhole-600nw-1849199212.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Incidencia 2</p>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+
+                  <!-- Cards Third Column -->
+                  <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+  
+                    <!-- Third Incident Card -->
+                    <div class="card">
+  
+                      <!-- Card Third Image -->
+                      <img src="https://www.shutterstock.com/image-photo/broken-cargo-pallet-open-manhole-600nw-1849199212.jpg" class="card-img-top" alt="..." height="200px">
+                      <div class="card-body">
+                        <p class="card-text">Incidencia 3</p>
+                      </div>
+  
+                    </div>
+  
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Row Inputs -->
+        <div class="row">
+
+          <!-- Table and Inputs column -->
+          <div class="col-12 mt-3">
+
+            <!-- Table and Inputs card -->
+            <div class="card bg-body-tertiary">
+
+              <!-- Card Header -->
+              <div class="card-header bg-body-tertiary">
+                <h5 class="card-title text-success-emphasis text-center">Registro de Material</h5>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body text-center">
+
+                <!-- Form -->
+                <form>
+
+                  <!-- Inputs Row -->
+                  <div class="row">
+
+                    <!-- Column Tipo -->
+                    <div class="col-lg-3 col-md-12">
+                        
+                      <!-- Form Group Tipo -->
+                      <div class="mb-3">
+                        <select class="form-select text-success-emphasis" id="tipo_material" aria-label="Tipo de material">
+                          <option selected>Seleccionar Tipo...</option>
+                          <option value="1">Forja</option>
+                          <option value="2">Material Resina</option>
+                          <option value="3">Otro</option>
+                        </select>
+                      </div>
+
+                    </div>
+
+                    <!-- Column Descripción -->
+                    <div class="col-lg-3 col-md-12">
+
+                      <!-- Form Group Descripción -->
+                      <div class="mb-3">
+                        <select class="form-select text-success-emphasis" id="desc_material">
+                          <option selected>Seleccionar Material...</option>
+                          <option value="1">Irwin 14OZ</option>
+                          <option value="2">TPE-Amarillo</option>
+                          <option value="3">Molde Reparación</option>
+                        </select>
+                      </div>
+
+                    </div>
+
+                    <!-- Column Código -->
+                    <div class="col-lg-2 col-md-12">
+
+                      <!-- Form Group Código -->
+                      <div class="mb-3">
+                        <fieldset disabled>
+                          <input type="text" class="form-control text-center" id="codigo_material" placeholder="Código de Material">
+                        </fieldset>
+                      </div>
+
+                    </div>
+
+                    <!-- Column Cantidad -->
+                    <div class="col-lg-3 col-md-12">
+
+                      <!-- Form Group Cantidad -->
+                      <div class="mb-3">
+                        <input type="text" class="form-control text-center" id="cantidad_material" placeholder="Cantidad">
+                      </div>
+
+                    </div>
+
+                    <!-- Column Add button -->
+                    <div class="col-lg-1 col-md-12">
+
+                      <!-- Form Group Add button -->
+                      <div class="mb-3">
+                        <button type="button" class="btn btn-success" id="add_entrada"><i class="fa-solid fa-plus"></i></button>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Row Table -->
+        <div class="row mb-3">
+
+          <!-- Table column -->
+          <div class="col-12 mt-3">
+
+            <!-- Table card -->
+            <div class="card bg-body-tertiary">
+
+              <!-- Card Header -->
+              <div class="card-header bg-body-tertiary">
+                <h5 class="card-title text-success-emphasis text-center">Tabla de registros</h5>
+              </div>
+
+              <!-- Card Body -->
+              <div class="card-body text-center table-responsive-md">
+
+                <!-- Table -->
+                <table class="table table-striped table-hover table-bordered border-success">
+                  
+                  <thead>
+                    <tr>
+                      <th scope="col">Tipo</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Código</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <th scope="row">Forja</th>
+                      <td>Irwin 14OZ</td>
+                      <td>IRW-14OZ</td>
+                      <td>10</td>
+                      <td>
+                        <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Material Resina</th>
+                      <td>TPE-Amarillo</td>
+                      <td>TPE-AMAR</td>
+                      <td>5</td>
+                      <td>
+                        <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Otro</th>
+                      <td>Molde Reparación</td>
+                      <td>MOL-REPA</td>
+                      <td>3</td>
+                      <td>
+                        <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                </table>
+
+                <!-- Center CTA button -->
+                <div class="d-grid col-xl-2 col-lg-4 col-md-6 mx-auto">
+                  <button type="button" class="btn btn-light">Guardar en la base de datos</button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- JS Bootstrap -->
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

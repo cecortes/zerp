@@ -27,11 +27,14 @@
 
 ---
 
-## 26-02-26 (28 min)
+## 26-02-26 (2hr 23 min)
 
 - [x] Fix the size of code input.
 - [x] Add a button in the same row of the inputs.
 - [x] Create the sixth row of the main form. (The table with the entries)
 - [x] Make the table responsive.
+- [x] Add a button to save the table data in the database.
+- [x] Start login page.
+- [x] Login page ended.
 
 ---

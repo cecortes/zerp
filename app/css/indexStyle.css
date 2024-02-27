@@ -1,0 +1,8 @@
+#panel {
+  width: 60vw !important;
+  min-width: 360px !important;
+  min-height: auto !important;
+  background-color: rgb(173, 174, 172) !important;
+  border-radius: 20px;
+  margin-top: 20vh;
+}
