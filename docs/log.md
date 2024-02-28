@@ -38,3 +38,13 @@
 - [x] Login page ended.
 
 ---
+
+## 27-02-26 (30min)
+
+- [x] Start creating the back4app database.
+- [x] Create _User_ in the database.
+- [x] Create _Incident_ in the database.
+- [x] Create _Pallet_ in the database.
+- [x] Create _Formatos_ in the database.
+
+---
