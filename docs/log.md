@@ -54,5 +54,6 @@
 - [x] Fix the login card size.
 - [x] Install jQuery.
 - [x] Add jquery to the login page.
+- [x] Add Parse node module.
 
 ---
