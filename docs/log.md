@@ -48,3 +48,11 @@
 - [x] Create _Formatos_ in the database.
 
 ---
+
+## 28-02-26 ()
+
+- [x] Fix the login card size.
+- [x] Install jQuery.
+- [x] Add jquery to the login page.
+
+---
