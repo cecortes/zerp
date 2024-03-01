@@ -57,3 +57,12 @@
 - [x] Add Parse node module.
 
 ---
+
+## 29-02-26 (2hr 37min)
+
+- [x] Add the login function to the core.
+- [x] Create popover if fields required are empty.
+- [x] Create a modal to use for errors or warnings.
+- [ ] Add the logout function to the core.
+
+---

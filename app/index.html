@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="./css/indexStyle.css">
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/606264bc57.js" crossorigin="anonymous"></script>
+  <!-- Back4App -->
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
   <!-- jQuery -->
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <!-- js -->
-  <script src="./js/login.js"></script>
+  <script type="module" src="./js/login.js"></script>
   
 </head>
 
@@ -47,13 +49,13 @@
           <div class="card-body">
             <form class="mt-4">
               <div class="input-group mb-3">
-                <span class="input-group-text" id="user_in"><i class="fa-solid fa-user text-success-emphasis"></i></span>
-                <input type="text" class="form-control text-center text-warning" id="user_in" name="user_in" placeholder="Escriba su usuario..." required>
+                <span class="input-group-text" id="user_input"><i class="fa-solid fa-user text-success-emphasis"></i></span>
+                <input type="text" class="form-control text-center text-warning" id="user_in" placeholder="Escriba su usuario..." required>
               </div>
 
               <div class="input-group mb-3">
-                <span class="input-group-text" id="pass_in"><i class="fa-solid fa-key text-success-emphasis"></i></span>
-                <input type="password" class="form-control text-center text-warning" id="pass_in" name="pass_in" placeholder="Escriba su contraseña..." required>
+                <span class="input-group-text" id="pass_input"><i class="fa-solid fa-key text-success-emphasis"></i></span>
+                <input type="password" class="form-control text-center text-warning" id="pass_in" placeholder="Escriba su contraseña..." required>
               </div>
 
               <div class="d-grid col-md-6 col-lg-5 col-xl-5 mx-auto mb-4">
@@ -72,6 +74,36 @@
 
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="modal-info" tabindex="-1" role="dialog" aria-labelledby="modal-info" aria-hidden="true">
+
+    <!-- Modal size & type -->
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+
+      <!-- Modal Content -->
+      <div class="modal-content bg-danger" id="modal-style">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title text-tertiary justify-content-center" id="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <div class="py-3 text-center text-light">
+            <i class="fa-solid fa-triangle-exclamation error-icon"></i>
+            <br>
+            <br>
+            <p class="text-tertiary" id="modal-text"></p>
+          </div>          
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
   <!-- JS Bootstrap -->
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

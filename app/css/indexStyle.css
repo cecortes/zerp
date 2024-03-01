@@ -7,6 +7,27 @@
   margin-top: 20vh;
 }
 
+.custom-popover {
+  background-color: rgb(207, 13, 13) !important;
+  color: var(--bs-tertiary-bg) !important;
+  border-radius: 10px;
+}
+
+.custom-popover2 {
+  background-color: rgb(198, 150, 27) !important;
+  color: var(--bs-tertiary-bg) !important;
+  border-radius: 10px;
+}
+
+.error-icon {
+  font-size: 3rem !important;
+}
+
+#modal-text {
+  font-size: 1.3rem !important;
+  color: rgb(227, 233, 221) !important;
+}
+
 @media screen and (max-width: 1024px) {
   #panel {
     width: 50vw !important;

@@ -2,7 +2,7 @@
   "name": "zerp",
   "version": "1.0.0",
   "description": "ERP for ZMT",
-  "main": "index.js",
+  "main": "./app/js/loginCore.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
