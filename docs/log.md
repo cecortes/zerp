@@ -71,12 +71,14 @@
 
 ---
 
-## 01-03-24 (1hr 5min)
+## 01-03-24 (1hr 15min)
 
 - [x] Add jQuery and back4app cdn to the entrance page.
 - [x] Add the entrance.js to the entrance page.
 - [x] Add the entranceCore.js to the entrance.js.
 - [x] Add a function to the core to verify and get the current user.
 - [x] Fill inputs with the current user data and current date.
+- [x] Set images to default.
+- [x] Comment the table entries to set the default data.
 
 ---
