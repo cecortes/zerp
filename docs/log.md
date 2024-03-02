@@ -20,14 +20,14 @@
 
 ---
 
-## 23-02-26 (1hr 28mim)
+## 23-02-24 (1hr 28mim)
 
 - [x] Create the fourth row of the main form. (Incident report)
 - [x] Create the fifth row of the main form. (inputs, the add button still missing)
 
 ---
 
-## 26-02-26 (2hr 23 min)
+## 26-02-24 (2hr 23 min)
 
 - [x] Fix the size of code input.
 - [x] Add a button in the same row of the inputs.
@@ -39,7 +39,7 @@
 
 ---
 
-## 27-02-26 (30min)
+## 27-02-24 (30min)
 
 - [x] Start creating the back4app database.
 - [x] Create _User_ in the database.
@@ -49,7 +49,7 @@
 
 ---
 
-## 28-02-26 ()
+## 28-02-24 ()
 
 - [x] Fix the login card size.
 - [x] Install jQuery.
@@ -58,11 +58,25 @@
 
 ---
 
-## 29-02-26 (2hr 37min)
+## 29-02-24 (2hr 37min)
 
 - [x] Add the login function to the core.
 - [x] Create popover if fields required are empty.
 - [x] Create a modal to use for errors or warnings.
-- [ ] Add the logout function to the core.
+
+```
+👉:
+- [x] Create the logout function.
+```
+
+---
+
+## 01-03-24 (1hr 5min)
+
+- [x] Add jQuery and back4app cdn to the entrance page.
+- [x] Add the entrance.js to the entrance page.
+- [x] Add the entranceCore.js to the entrance.js.
+- [x] Add a function to the core to verify and get the current user.
+- [x] Fill inputs with the current user data and current date.
 
 ---
