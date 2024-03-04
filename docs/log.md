@@ -82,3 +82,12 @@
 - [x] Comment the table entries to set the default data.
 
 ---
+
+## 03-03-24 (1hr 32min)
+
+- [x] Sketch a modal to take pictures.
+- [x] Create the modal to take pictures.
+- [x] Add the modal to the main form.
+- [x] Add the function to take pictures.
+
+---

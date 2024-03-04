@@ -8,6 +8,11 @@ $(async function () {
   /* --> DOM Elements <-- */
   const usernameField = $("#username");
   const dateField = $("#date");
+  const modalCamera = $("#modal-camera");
+  const video = $("#video");
+  const canvas = $("#canvas");
+  const buttonTakeFoto = $("#take-foto");
+  const imageFoto = $("#foto");
 
   /* --> GlobalVars <-- */
   let userId = "";
@@ -58,6 +63,71 @@ $(async function () {
     // Fill the textbox
     usernameField.val(userName);
   }
+
+  /* --> Video Config and Constrains <-- */
+  const constraints = {
+    video: { width: 480, height: 320, facingMode: "enviroment" },
+    audio: false,
+  };
+
+  /* --> Acceso al Stream <-- */
+  const getVideo = async () => {
+    await navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((stream) => {
+        video[0].srcObject = stream;
+        video[0].play();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  /* --> Stop Video <-- */
+  const stopVideo = () => {
+    let stream = video[0].srcObject;
+    let tracks = stream.getTracks();
+
+    video[0].pause();
+
+    tracks.forEach((track) => {
+      track.stop();
+    });
+
+    video[0].srcObject = null;
+  };
+
+  /* --> Take Foto <-- */
+  buttonTakeFoto.on("click", () => {
+    // Get the context of the canvas
+    let context = canvas[0].getContext("2d");
+
+    // Set the width and height of the canvas
+    canvas[0].width = video[0].videoWidth;
+    canvas[0].height = video[0].videoHeight;
+
+    // Draw the image in the canvas
+    context.drawImage(video[0], 0, 0, canvas[0].width, canvas[0].height);
+
+    // Get the data of the canvas
+    let data = canvas[0].toDataURL("image/png");
+
+    // Set the data in the image
+    imageFoto[0].src = data;
+
+    // Stop the video
+    //stopVideo();
+  });
+
+  /* --> EventListeners <-- */
+  modalCamera.on("shown.bs.modal", () => {
+    //alert("Activando la cámara del dispositivo");
+    getVideo();
+  });
+
+  modalCamera.on("hidden.bs.modal", () => {
+    stopVideo();
+  });
 
   /* --> On load <-- */
   entranceCore.CheckLoginUser();

@@ -188,7 +188,7 @@
                       <!-- Form Group Camera-->
                       <div class="input-group mb-3">
                         <div class="d-grid gap-2 col-12">
-                          <button type="button" class="btn btn-warning">Activar Cámara</button>
+                          <button type="button" class="btn btn-warning" id="button_camera" data-bs-target="#modal-camera" data-bs-toggle="modal">Activar Cámara</button>
                         </div>
                       </div>
 
@@ -753,6 +753,46 @@
               <br>
               <p class="text-tertiary" id="modal-text"></p>
             </div>          
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Modal Camera -->
+    <div class="modal fade" id="modal-camera" tabindex="-1" role="dialog" aria-labelledby="modal-camera" aria-hidden="true">
+
+      <!-- Modal size & type -->
+      <div class="modal-dialog modal-fullscreen modal-dialog-centered" role="document">
+
+        <!-- Modal Content -->
+        <div class="modal-content bg-tertiary" id="modal-style">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title text-success-emphasis justify-content-center" id="modal-title">Cámara</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body text-center">
+
+            <div class="py-3 text-center video-wrap">
+              <video id="video" width="auto" class="video bg-secondary"></video>
+            </div>
+
+            <div class="mt-1 text-center mb-3">
+              <button type="button" class="btn btn-success" id="take-foto">Tomar Foto</button>
+            </div>
+
+            <div class="py-2 text-center canvas-wrap">
+              <canvas width="420px" height="340px" class="canvas bg-secondary" id="canvas">
+                <img src="" alt="foto" class="foto" id="foto">
+              </canvas>
+            </div>
+
           </div>
 
         </div>
