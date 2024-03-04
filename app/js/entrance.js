@@ -66,7 +66,7 @@ $(async function () {
 
   /* --> Video Config and Constrains <-- */
   const constraints = {
-    video: { width: 480, height: 320, facingMode: "enviroment" },
+    video: { width: 480, height: 320, facingMode: "environment" },
     audio: false,
   };
 

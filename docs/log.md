@@ -83,7 +83,7 @@
 
 ---
 
-## 03-03-24 (1hr 32min)
+## 03-03-24 (1hr 54min)
 
 - [x] Sketch a modal to take pictures.
 - [x] Create the modal to take pictures.
