@@ -779,18 +779,85 @@
           <!-- Modal Body -->
           <div class="modal-body text-center">
 
-            <div class="py-3 text-center video-wrap">
-              <video id="video" width="auto" class="video bg-secondary"></video>
+            <!-- Combo row -->
+            <div class="row">
+
+              <!-- Column Combo -->
+              <div class="col-12">
+
+                <!-- Combo -->
+                <div class="input-group mb-3">
+                  <select class="form-select text-success-emphasis" id="combo_type" aria-label="Seleccionar tipo">
+                    <option selected>Seleccionar tipo...</option>
+                    <option value="1">Formatos</option>
+                    <option value="2">Pallet</option>
+                    <option value="3">Incidencia</option>
+                  </select>
+                </div>
+
+              </div>
+
             </div>
 
-            <div class="mt-1 text-center mb-3">
-              <button type="button" class="btn btn-success" id="take-foto">Tomar Foto</button>
+            <!-- Camera row -->
+            <div class="row">
+
+              <!-- Column Camera -->
+              <div class="col-12">
+
+                <!-- Camera -->
+                <div class="py-3 text-center video-wrap">
+                  <video id="video" width="auto" class="video bg-secondary"></video>
+                </div>
+
+                <div class="mt-1 text-center mb-3">
+                  <button type="button" class="btn btn-success" id="take-foto">Tomar Foto</button>
+                </div>
+
+              </div>
+
             </div>
 
-            <div class="py-2 text-center canvas-wrap">
-              <canvas width="420px" height="340px" class="canvas bg-secondary" id="canvas">
-                <img src="" alt="foto" class="foto" id="foto">
-              </canvas>
+            <!-- Canvas Row -->
+            <div class="row">
+
+              <!-- Column Canvas -->
+              <div class="col-12">
+
+                <!-- Canvas -->
+                <div class="py-3 text-center canvas-wrap">
+                  <canvas width="auto" height="340px" class="canvas bg-secondary" id="canvas">
+                    <img src="" alt="foto" class="foto" id="foto">
+                  </canvas>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="container text-center">
+              
+              <!-- CTA buttons -->
+              <div class="row mt-3 mb-3">
+
+                <!-- Column Save button -->
+                <div class="col-6">
+
+                  <!-- Save button -->
+                  <button type="button" class="w-75 btn btn-warning" id="save-foto">Guardar</button>
+
+                </div>
+
+                <!-- Column Delete button -->
+                <div class="col-6">
+
+                  <!-- Delete button -->
+                  <button type="button" class="w-75 btn btn-danger" id="del-foto">Eliminar</button>
+                  
+                </div>
+  
+              </div>
+
             </div>
 
           </div>

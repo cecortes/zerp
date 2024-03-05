@@ -91,3 +91,12 @@
 - [x] Add the function to take pictures.
 
 ---
+
+## 04-03-24 (1hr 6min)
+
+- [x] Modify the modal to take pictures, add a combo to select types of pictures.
+- [x] Add a new row to place a combo to select the type of picture.
+- [x] Add a new row to place the canvas.
+- [x] Add a new row to place the buttons to save the picture and delete the picture.
+
+---
