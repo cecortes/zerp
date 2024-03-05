@@ -13,6 +13,23 @@ $(async function () {
   const canvas = $("#canvas");
   const buttonTakeFoto = $("#take-foto");
   const imageFoto = $("#foto");
+  const buttonSave = $("#save-foto");
+  const delFoto = $("#del-foto");
+  const comboType = $("#combo_type");
+
+  const typePopover = new bootstrap.Popover(comboType, {
+    trigger: "manual",
+    content: "Debe seleccionar un tipo de foto.",
+    placement: "bottom",
+    customClass: "custom-popover",
+  });
+
+  const picPopover = new bootstrap.Popover(buttonTakeFoto, {
+    trigger: "manual",
+    content: "Debe tomar una foto.",
+    placement: "bottom",
+    customClass: "custom-popover",
+  });
 
   /* --> GlobalVars <-- */
   let userId = "";
@@ -115,9 +132,38 @@ $(async function () {
     // Set the data in the image
     imageFoto[0].src = data;
 
-    // Stop the video
-    //stopVideo();
+    // Hide popover
+    picPopover.hide();
   });
+
+  /* --> Save Foto <-- */
+  /* @params: none
+  /* @return: void
+  /* @Calls: buttonSave click.
+  /* @action: Check if type was selected
+  /*          Check if the canvas has a pic 
+  /*          If all is correct call a function to place the pic in
+  /*          place.
+  /*          If not, show a user message*/
+  function SaveFoto() {
+    //Check if the type was selected
+    if (comboType.val() == "") {
+      // Show a user popover
+      console.log("Debe seleccionar un tipo de foto");
+      typePopover.show();
+      return;
+    }
+
+    // Get the src attribute of the image
+    let pic = imageFoto.attr("src");
+
+    // Check if the canvas has a pic
+    if (pic == "") {
+      // Show a pic popover
+      picPopover.show();
+      return;
+    }
+  }
 
   /* --> EventListeners <-- */
   modalCamera.on("shown.bs.modal", () => {
@@ -127,6 +173,21 @@ $(async function () {
 
   modalCamera.on("hidden.bs.modal", () => {
     stopVideo();
+  });
+
+  buttonSave.on("click", SaveFoto);
+
+  delFoto.on("click", () => {
+    // Clear the canvas
+    let context = canvas[0].getContext("2d");
+    context.clearRect(0, 0, canvas[0].width, canvas[0].height);
+
+    // Clear the image
+    imageFoto[0].src = "";
+  });
+
+  comboType.on("focus", () => {
+    typePopover.hide();
   });
 
   /* --> On load <-- */

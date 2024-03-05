@@ -11,6 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/panel.css">
     <link rel="stylesheet" href="../css/modalErrorStyle.css">
+    <link rel="stylesheet" href="../css/popStyles.css">
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/606264bc57.js" crossorigin="anonymous"></script>
     <!-- Back4App -->
@@ -731,7 +732,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="modal-info" tabindex="-1" role="dialog" aria-labelledby="modal-info" aria-hidden="true">
+    <div class="modal fade" id="modal-info" tabindex="-2" role="dialog" aria-labelledby="modal-info" aria-hidden="true">
 
       <!-- Modal size & type -->
       <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
@@ -788,7 +789,7 @@
                 <!-- Combo -->
                 <div class="input-group mb-3">
                   <select class="form-select text-success-emphasis" id="combo_type" aria-label="Seleccionar tipo">
-                    <option selected>Seleccionar tipo...</option>
+                    <option selected value="">Seleccionar tipo...</option>
                     <option value="1">Formatos</option>
                     <option value="2">Pallet</option>
                     <option value="3">Incidencia</option>

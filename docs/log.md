@@ -98,5 +98,7 @@
 - [x] Add a new row to place a combo to select the type of picture.
 - [x] Add a new row to place the canvas.
 - [x] Add a new row to place the buttons to save the picture and delete the picture.
+- [x] Add a function to prevent the user to save a picture if the type of picture is not selected or canvas be empty.
+- [x] Add a function to delete the picture.
 
 ---

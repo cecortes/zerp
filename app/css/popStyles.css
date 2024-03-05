@@ -1,0 +1,11 @@
+.custom-popover {
+  background-color: rgb(207, 13, 13) !important;
+  color: var(--bs-tertiary-bg) !important;
+  border-radius: 10px;
+}
+
+.custom-popover2 {
+  background-color: rgb(198, 150, 27) !important;
+  color: var(--bs-tertiary-bg) !important;
+  border-radius: 10px;
+}
