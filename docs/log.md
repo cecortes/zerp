@@ -92,7 +92,7 @@
 
 ---
 
-## 04-03-24 (1hr 6min)
+## 04-03-24 (2hr 11min)
 
 - [x] Modify the modal to take pictures, add a combo to select types of pictures.
 - [x] Add a new row to place a combo to select the type of picture.
