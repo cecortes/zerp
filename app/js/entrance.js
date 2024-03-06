@@ -31,6 +31,48 @@ $(async function () {
     customClass: "custom-popover",
   });
 
+  const formatoOk = new bootstrap.Popover(canvas, {
+    trigger: "manual",
+    content: "Imágen guardada en Formatos.",
+    placement: "top",
+    customClass: "custom-popover2",
+  });
+
+  const formatoError = new bootstrap.Popover(canvas, {
+    trigger: "manual",
+    content: "No hay más espacio en Formatos.",
+    placement: "top",
+    customClass: "error-popover",
+  });
+
+  const palletOk = new bootstrap.Popover(canvas, {
+    trigger: "manual",
+    content: "Imágen guardada en Pallets.",
+    placement: "top",
+    customClass: "custom-popover2",
+  });
+
+  const palletError = new bootstrap.Popover(canvas, {
+    trigger: "manual",
+    content: "No hay más espacio en Pallets.",
+    placement: "top",
+    customClass: "error-popover",
+  });
+
+  const incidenciaOk = new bootstrap.Popover(canvas, {
+    trigger: "manual",
+    content: "Imágen guardada en Incidencias.",
+    placement: "top",
+    customClass: "custom-popover2",
+  });
+
+  const incidenciaError = new bootstrap.Popover(canvas, {
+    trigger: "manual",
+    content: "No hay más espacio en Incidencias.",
+    placement: "top",
+    customClass: "error-popover",
+  });
+
   /* --> GlobalVars <-- */
   let userId = "";
   let userName = "";
@@ -136,6 +178,22 @@ $(async function () {
     picPopover.hide();
   });
 
+  /* --> ClearCanvas <-- */
+  /* @params: none
+  /* @return: void
+  /* @Calls: buttonClear click & PlaceFoto.
+  /* @action: Clear the canvas */
+  function ClearCanvas() {
+    // Get the context of the canvas
+    let context = canvas[0].getContext("2d");
+
+    // Clear the canvas
+    context.clearRect(0, 0, canvas[0].width, canvas[0].height);
+
+    // Clear the image
+    imageFoto[0].src = "";
+  }
+
   /* --> Save Foto <-- */
   /* @params: none
   /* @return: void
@@ -163,6 +221,137 @@ $(async function () {
       picPopover.show();
       return;
     }
+
+    // Call a function to place the pic in place
+    PlaceFoto();
+  }
+
+  /* --> Place Foto <-- */
+  /* @params: none
+  /* @return: void
+  /* @Calls: SaveFoto.
+  /* @action: Check the type of the pic.
+  /*          Iterate over the img elements,
+  /*          and place the pic in the correct place */
+  function PlaceFoto() {
+    // Locals
+    let flgFormato = false;
+    let flgPallet = false;
+    let flgIncidencia = false;
+
+    // Get the type of the pic
+    let type = comboType.val();
+
+    // If the type is "formato"
+    if (type == "formato") {
+      // Iterate over the formato img elements
+      for (let i = 1; i <= 4; i++) {
+        // Get the src attribute
+        let src = $(`#formato${i}`).attr("src");
+
+        // If the src is empty
+        if (src === "../assets/bg.jpg") {
+          flgFormato = true;
+          // Set the src attribute
+          $(`#formato${i}`).attr("src", imageFoto[0].src);
+          break;
+        }
+      }
+
+      if (!flgFormato) {
+        // Show a error popover
+        formatoError.show();
+
+        // Delay 1.5 seconds
+        setTimeout(() => {
+          formatoError.hide();
+          // Clear the canvas
+          ClearCanvas();
+        }, 1500);
+      } else {
+        // Show a Ok popover
+        formatoOk.show();
+
+        // Delay 1.5 seconds
+        setTimeout(() => {
+          formatoOk.hide();
+          // Clear the canvas
+          ClearCanvas();
+        }, 1500);
+      }
+    } else if (type == "pallet") {
+      // Iterate over the pallet img elements
+      for (let i = 1; i <= 9; i++) {
+        // Get the src attribute
+        let src = $(`#pallet${i}`).attr("src");
+
+        // If the src is empty
+        if (src === "../assets/bg.jpg") {
+          flgPallet = true;
+          // Set the src attribute
+          $(`#pallet${i}`).attr("src", imageFoto[0].src);
+          break;
+        }
+      }
+
+      if (!flgPallet) {
+        // Show a error popover
+        palletError.show();
+
+        // Delay 1.5 seconds
+        setTimeout(() => {
+          palletError.hide();
+          // Clear the canvas
+          ClearCanvas();
+        }, 1500);
+      } else {
+        // Show a Ok popover
+        palletOk.show();
+
+        // Delay 1.5 seconds
+        setTimeout(() => {
+          palletOk.hide();
+          // Clear the canvas
+          ClearCanvas();
+        }, 1500);
+      }
+    } else if (type == "incidencia") {
+      // Iterate over the incidencia img elements
+      for (let i = 1; i <= 3; i++) {
+        // Get the src attribute
+        let src = $(`#incidencia${i}`).attr("src");
+
+        // If the src is empty
+        if (src === "../assets/bg.jpg") {
+          flgIncidencia = true;
+          // Set the src attribute
+          $(`#incidencia${i}`).attr("src", imageFoto[0].src);
+          break;
+        }
+      }
+
+      if (!flgIncidencia) {
+        // Show a error popover
+        incidenciaError.show();
+
+        // Delay 1.5 seconds
+        setTimeout(() => {
+          incidenciaError.hide();
+          // Clear the canvas
+          ClearCanvas();
+        }, 1500);
+      } else {
+        // Show a Ok popover
+        incidenciaOk.show();
+
+        // Delay 1.5 seconds
+        setTimeout(() => {
+          incidenciaOk.hide();
+          // Clear the canvas
+          ClearCanvas();
+        }, 1500);
+      }
+    }
   }
 
   /* --> EventListeners <-- */
@@ -177,21 +366,23 @@ $(async function () {
 
   buttonSave.on("click", SaveFoto);
 
-  delFoto.on("click", () => {
-    // Clear the canvas
-    let context = canvas[0].getContext("2d");
-    context.clearRect(0, 0, canvas[0].width, canvas[0].height);
-
-    // Clear the image
-    imageFoto[0].src = "";
-  });
+  delFoto.on("click", ClearCanvas);
 
   comboType.on("focus", () => {
     typePopover.hide();
+  });
+
+  comboType.on("change", () => {
+    if (comboType.val() != "") {
+      buttonTakeFoto.prop("disabled", false);
+    } else {
+      buttonTakeFoto.prop("disabled", true);
+    }
   });
 
   /* --> On load <-- */
   entranceCore.CheckLoginUser();
   await GetUserName();
   dateField.val(GetCurrentDate());
+  buttonTakeFoto.prop("disabled", true);
 });

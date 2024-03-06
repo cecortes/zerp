@@ -5,7 +5,15 @@
 }
 
 .custom-popover2 {
-  background-color: rgb(198, 150, 27) !important;
+  background-color: rgb(25, 135, 84) !important;
   color: var(--bs-tertiary-bg) !important;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.error-popover {
+  background-color: rgb(207, 13, 13) !important;
+  color: var(--bs-tertiary-bg) !important;
+  font-size: 1.2rem;
   border-radius: 10px;
 }

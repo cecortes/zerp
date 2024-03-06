@@ -102,3 +102,17 @@
 - [x] Add a function to delete the picture.
 
 ---
+
+## 05-03-24 (1hr 31min)
+
+- [x] Change the take photo button behavior to disable the button if the combo is not selected.
+- [x] Add a function to save the picture formatos in the main form.
+- [x] Add a popover for formato picture save it successfully.
+- [x] Add a popover for formato picture no room error.
+- [x] Add a popover for pallet picture save it succesfully.
+- [x] Add a popover for pallet picture no room error.
+- [x] Add a popover for incident picture save it succesfully.
+- [x] Add a popover for incident picture no room error.
+- [x] Take fotos and place it into the main form.
+
+---
