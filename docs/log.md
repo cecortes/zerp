@@ -103,7 +103,7 @@
 
 ---
 
-## 05-03-24 (1hr 31min)
+## 05-03-24 (1hr 48min)
 
 - [x] Change the take photo button behavior to disable the button if the combo is not selected.
 - [x] Add a function to save the picture formatos in the main form.
