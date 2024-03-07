@@ -117,9 +117,17 @@
 
 ---
 
-## 06-03-24 ()
+## 06-03-24 (1hr 45min)
 
 - [x] Start into Registro Material section.
 - [x] Make a function to add materials depending on the type of material.
+
+---
+
+## 07-03-24 ()
+
+- [x] Finish the function to add materials depending on the type of material.
+- [ ] Show a popover if the cantidad is not a number.
+- [ ] Complete behavior of the add button in the main form.
 
 ---

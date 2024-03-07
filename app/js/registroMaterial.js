@@ -9,6 +9,8 @@ $(function () {
   const cantidadMaterial = $("#cantidad_material");
   const btnAdd = $("#add_entrada");
 
+  const notValid = new bootstrap.Popover();
+
   /* --> EnabledElements <-- */
   /* @params: none
   /* @returns: none
@@ -26,7 +28,6 @@ $(function () {
       // Enable all elements
       descMaterial.prop("disabled", false);
       codigoMaterial.prop("disabled", false);
-      cantidadMaterial.prop("disabled", false);
 
       // Clear the options
       descMaterial.empty();
@@ -42,7 +43,6 @@ $(function () {
       // Enable all elements
       descMaterial.prop("disabled", false);
       codigoMaterial.prop("disabled", false);
-      cantidadMaterial.prop("disabled", false);
 
       // Clear the options
       descMaterial.empty();
@@ -63,7 +63,6 @@ $(function () {
       // Enable all elements
       descMaterial.prop("disabled", false);
       codigoMaterial.prop("disabled", false);
-      cantidadMaterial.prop("disabled", false);
 
       // Clear the options
       descMaterial.empty();
@@ -80,6 +79,30 @@ $(function () {
 
   /* --> Event Handlers <-- */
   tipoMaterial.on("change", enabledElements);
+
+  descMaterial.on("change", () => {
+    if (descMaterial.val() !== "") {
+      cantidadMaterial.prop("disabled", false);
+    } else {
+      cantidadMaterial.prop("disabled", true);
+    }
+  });
+
+  cantidadMaterial.on("input", () => {
+    // Get the text
+    let cantidad = cantidadMaterial.val();
+
+    // Check if the input is not a number
+    if (isNaN(cantidad)) {
+      // Show the error
+      cantidadMaterial.addClass("is-invalid");
+      btnAdd.prop("disabled", true);
+    } else {
+      // Remove the error
+      cantidadMaterial.removeClass("is-invalid");
+      btnAdd.prop("disabled", false);
+    }
+  });
 
   /* --> On Ready <-- */
   enabledElements();
