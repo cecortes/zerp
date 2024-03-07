@@ -20,6 +20,7 @@
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <!-- js -->
     <script type="module" src="../js/entrance.js"></script>
+    <script src="../js/registroMaterial.js"></script>
 
   </head>
 
@@ -582,10 +583,10 @@
                       <!-- Form Group Tipo -->
                       <div class="mb-3">
                         <select class="form-select text-success-emphasis" id="tipo_material" aria-label="Tipo de material">
-                          <option selected>Seleccionar Tipo...</option>
-                          <option value="1">Forja</option>
-                          <option value="2">Material Resina</option>
-                          <option value="3">Otro</option>
+                          <option selected value="">Seleccionar Tipo...</option>
+                          <option value="forja">Forja</option>
+                          <option value="resina">Material Resina</option>
+                          <option value="otro">Otro</option>
                         </select>
                       </div>
 
@@ -598,7 +599,6 @@
                       <div class="mb-3">
                         <select class="form-select text-success-emphasis" id="desc_material">
                           <option selected>Seleccionar Material...</option>
-                          <option value="1">Irwin 14OZ</option>
                           <option value="2">TPE-Amarillo</option>
                           <option value="3">Molde Reparación</option>
                         </select>

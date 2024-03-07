@@ -116,3 +116,10 @@
 - [x] Take fotos and place it into the main form.
 
 ---
+
+## 06-03-24 ()
+
+- [x] Start into Registro Material section.
+- [x] Make a function to add materials depending on the type of material.
+
+---
