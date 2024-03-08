@@ -124,10 +124,11 @@
 
 ---
 
-## 07-03-24 ()
+## 07-03-24 (1hr 16min)
 
 - [x] Finish the function to add materials depending on the type of material.
-- [ ] Show a popover if the cantidad is not a number.
-- [ ] Complete behavior of the add button in the main form.
+- [x] Complete behavior of the add button in the main form.
+- [x] Add the new row to the table when the add button is clicked.
+- [x] Add the delete row function to the table.
 
 ---
