@@ -16,6 +16,22 @@ $(async function () {
   const buttonSave = $("#save-foto");
   const delFoto = $("#del-foto");
   const comboType = $("#combo_type");
+  const delFormato1 = $("#del-formato1");
+  const delFormato2 = $("#del-formato2");
+  const delFormato3 = $("#del-formato3");
+  const delFormato4 = $("#del-formato4");
+  const delPallet1 = $("#del-pallet1");
+  const delPallet2 = $("#del-pallet2");
+  const delPallet3 = $("#del-pallet3");
+  const delPallet4 = $("#del-pallet4");
+  const delPallet5 = $("#del-pallet5");
+  const delPallet6 = $("#del-pallet6");
+  const delPallet7 = $("#del-pallet7");
+  const delPallet8 = $("#del-pallet8");
+  const delPallet9 = $("#del-pallet9");
+  const delIncidencia1 = $("#del-incidencia1");
+  const delIncidencia2 = $("#del-incidencia2");
+  const delIncidencia3 = $("#del-incidencia3");
 
   const typePopover = new bootstrap.Popover(comboType, {
     trigger: "manual",
@@ -254,6 +270,8 @@ $(async function () {
           flgFormato = true;
           // Set the src attribute
           $(`#formato${i}`).attr("src", imageFoto[0].src);
+          // Enable the delete button
+          $(`#del-formato${i}`).prop("disabled", false);
           break;
         }
       }
@@ -290,6 +308,8 @@ $(async function () {
           flgPallet = true;
           // Set the src attribute
           $(`#pallet${i}`).attr("src", imageFoto[0].src);
+          // Enable the delete button
+          $(`#del-pallet${i}`).prop("disabled", false);
           break;
         }
       }
@@ -326,6 +346,8 @@ $(async function () {
           flgIncidencia = true;
           // Set the src attribute
           $(`#incidencia${i}`).attr("src", imageFoto[0].src);
+          // Enable the delete button
+          $(`#del-incidencia${i}`).prop("disabled", false);
           break;
         }
       }
@@ -351,6 +373,25 @@ $(async function () {
           ClearCanvas();
         }, 1500);
       }
+    }
+  }
+
+  /* --> DisableDelButtons <-- */
+  /* @params: none
+  /* @return: void
+  /* @Calls: On load function.
+  /* @action: Disable the delete buttons */
+  function DisableDelButtons() {
+    for (let i = 1; i <= 4; i++) {
+      $(`#del-formato${i}`).prop("disabled", true);
+    }
+
+    for (let i = 1; i <= 9; i++) {
+      $(`#del-pallet${i}`).prop("disabled", true);
+    }
+
+    for (let i = 1; i <= 3; i++) {
+      $(`#del-incidencia${i}`).prop("disabled", true);
     }
   }
 
@@ -380,9 +421,90 @@ $(async function () {
     }
   });
 
+  delFormato1.on("click", () => {
+    $("#formato1").attr("src", "../assets/bg.jpg");
+    delFormato1.prop("disabled", true);
+  });
+
+  delFormato2.on("click", () => {
+    $("#formato2").attr("src", "../assets/bg.jpg");
+    delFormato2.prop("disabled", true);
+  });
+
+  delFormato3.on("click", () => {
+    $("#formato3").attr("src", "../assets/bg.jpg");
+    delFormato3.prop("disabled", true);
+  });
+
+  delFormato4.on("click", () => {
+    $("#formato4").attr("src", "../assets/bg.jpg");
+    delFormato4.prop("disabled", true);
+  });
+
+  delPallet1.on("click", () => {
+    $("#pallet1").attr("src", "../assets/bg.jpg");
+    delPallet1.prop("disabled", true);
+  });
+
+  delPallet2.on("click", () => {
+    $("#pallet2").attr("src", "../assets/bg.jpg");
+    delPallet2.prop("disabled", true);
+  });
+
+  delPallet3.on("click", () => {
+    $("#pallet3").attr("src", "../assets/bg.jpg");
+    delPallet3.prop("disabled", true);
+  });
+
+  delPallet4.on("click", () => {
+    $("#pallet4").attr("src", "../assets/bg.jpg");
+    delPallet4.prop("disabled", true);
+  });
+
+  delPallet5.on("click", () => {
+    $("#pallet5").attr("src", "../assets/bg.jpg");
+    delPallet5.prop("disabled", true);
+  });
+
+  delPallet6.on("click", () => {
+    $("#pallet6").attr("src", "../assets/bg.jpg");
+    delPallet6.prop("disabled", true);
+  });
+
+  delPallet7.on("click", () => {
+    $("#pallet7").attr("src", "../assets/bg.jpg");
+    delPallet7.prop("disabled", true);
+  });
+
+  delPallet8.on("click", () => {
+    $("#pallet8").attr("src", "../assets/bg.jpg");
+    delPallet8.prop("disabled", true);
+  });
+
+  delPallet9.on("click", () => {
+    $("#pallet9").attr("src", "../assets/bg.jpg");
+    delPallet9.prop("disabled", true);
+  });
+
+  delIncidencia1.on("click", () => {
+    $("#incidencia1").attr("src", "../assets/bg.jpg");
+    delIncidencia1.prop("disabled", true);
+  });
+
+  delIncidencia2.on("click", () => {
+    $("#incidencia2").attr("src", "../assets/bg.jpg");
+    delIncidencia2.prop("disabled", true);
+  });
+
+  delIncidencia3.on("click", () => {
+    $("#incidencia3").attr("src", "../assets/bg.jpg");
+    delIncidencia3.prop("disabled", true);
+  });
+
   /* --> On load <-- */
   entranceCore.CheckLoginUser();
   await GetUserName();
   dateField.val(GetCurrentDate());
   buttonTakeFoto.prop("disabled", true);
+  DisableDelButtons();
 });

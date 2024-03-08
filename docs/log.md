@@ -132,3 +132,11 @@
 - [x] Add the delete row function to the table.
 
 ---
+
+## 08-03-24 (40min)
+
+- [x] Add a delete button to all canvas.
+- [x] Modify the eneble function to disable the delete button if the canvas is empty.
+- [x] Add a function to delete the picture in the main form.
+
+---
