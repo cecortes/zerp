@@ -122,13 +122,74 @@ export async function TestSaveFormatos() {
 /* @returns: none
 /* @actions: Save the data to the database */
 export async function SaveEntradas(data) {
+  console.log(data);
+  /*
+  console.log(data.imagenes[0].userId);
+  console.log(data.imagenes[0].userName);
+  console.log(data.imagenes[1].Formato);
+  console.log(data.imagenes[1].src);
+  */
   // Handle error
   try {
-    // Iterate over the array
-    for (let i = 0; i < data.length; i++) {
-      // Get user data
-      let userData = data[i];
+    // Create a new instance of Images class
+    let Images = Parse.Object.extend("Images");
+    let newImageEntry = new Images();
+
+    // Iterate over the formatos
+    for (let i = 1; i <= 4; i++) {
+      // Check if the image is not empty
+      if (data.imagenes[i].Formato != "null") {
+        // Create a new Parse File
+        let Formato = new Parse.File("formato.jpg", {
+          base64: data.imagenes[i].src,
+        });
+
+        // Set the image data
+        newImageEntry.set(`formato${i}`, Formato);
+      }
     }
+
+    // Iterate over the pallets
+    for (let i = 1; i <= 9; i++) {
+      // Check if the image is not empty
+      if (data.imagenes[i + 4].Pallet != "null") {
+        // Create a new Parse File
+        let Pallet = new Parse.File("pallet.jpg", {
+          base64: data.imagenes[i + 4].src,
+        });
+
+        // Set the image data
+        newImageEntry.set(`pallet${i}`, Pallet);
+      }
+    }
+
+    // Iterate over the Incidencias
+    for (let i = 1; i <= 3; i++) {
+      // Check if the image is not empty
+      if (data.imagenes[i + 13].Incidencia != "null") {
+        // Create a new Parse File
+        let Incidencia = new Parse.File("incidencia.jpg", {
+          base64: data.imagenes[i + 13].src,
+        });
+
+        // Set the image data
+        newImageEntry.set(`incidencia${i}`, Incidencia);
+      }
+    }
+
+    // Set the user data
+    newImageEntry.set("userId", data.imagenes[0].userId);
+    newImageEntry.set("userName", data.imagenes[0].userName);
+
+    // Save the data
+    await newImageEntry
+      .save()
+      .then((Response) => {
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   } catch (error) {
     // Show Modal
     $("#modal-title").text("Error de conexión");

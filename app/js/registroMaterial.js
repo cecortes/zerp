@@ -164,7 +164,7 @@ $(async function () {
 
     // Iterate over the formatos
     for (let i = 1; i <= 4; i++) {
-      // Get the src of the formstos image
+      // Get the src of the formatos image
       let src = $(`#formato${i}`).attr("src");
 
       // Check if the src is empty
@@ -188,8 +188,57 @@ $(async function () {
       }
     }
 
-    // Test Save Formatos
-    //await entranceCore.TestSaveFormatos();
+    // Iterate over the pallets
+    for (let i = 1; i <= 9; i++) {
+      // Get the src of the pallets image
+      let src = $(`#pallet${i}`).attr("src");
+
+      // Check if the src is empty
+      if (src === "../assets/bg.jpg") {
+        // Create the object
+        let obj = {
+          Pallet: "null",
+          src: "",
+        };
+        // Push the object
+        data.push(obj);
+      } else {
+        // Create the object
+        let obj = {
+          Pallet: i,
+          src: src,
+        };
+
+        // Push the object
+        data.push(obj);
+      }
+    }
+
+    // Iterate over the incidencias
+    for (let i = 1; i <= 3; i++) {
+      // Get the src of the incidencias image
+      let src = $(`#incidencia${i}`).attr("src");
+
+      // Check if the src is empty
+      if (src === "../assets/bg.jpg") {
+        // Create the object
+        let obj = {
+          Incidencia: "null",
+          src: "",
+        };
+        // Push the object
+        data.push(obj);
+      } else {
+        // Create the object
+        let obj = {
+          Incidencia: i,
+          src: src,
+        };
+
+        // Push the object
+        data.push(obj);
+      }
+    }
 
     // Iterate over the rows
     rows.each((index, row) => {
@@ -210,16 +259,11 @@ $(async function () {
 
     // Create the new object
     let obj = {
-      data: data,
+      imagenes: data,
     };
 
     // Save the data
-    console.log(obj);
-    console.log(obj.data[0].userId);
-    console.log(obj.data[0].userName);
-    console.log(obj.data[1].Formato);
-    console.log(obj.data[1].src);
-    console.log(obj.data.length);
+    await entranceCore.SaveEntradas(obj);
   }
 
   /* --> Event Handlers <-- */
