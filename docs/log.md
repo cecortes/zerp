@@ -145,6 +145,7 @@
 
 - [x] Compare the way to save image in the database.
 - [x] Add a test function to save the image in the database. (DEBUG PURPOSE)
+- [ ] Modify the bakend to create a single table for all images.
 - [ ] Add a function to save the table data in the database.
 
 ---

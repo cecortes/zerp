@@ -116,3 +116,23 @@ export async function TestSaveFormatos() {
     console.log(error);
   }
 }
+
+/* --> SaveEntradas <-- */
+/* @params: array of objects
+/* @returns: none
+/* @actions: Save the data to the database */
+export async function SaveEntradas(data) {
+  // Handle error
+  try {
+    // Iterate over the array
+    for (let i = 0; i < data.length; i++) {
+      // Get user data
+      let userData = data[i];
+    }
+  } catch (error) {
+    // Show Modal
+    $("#modal-title").text("Error de conexión");
+    $("#modal-text").text(error.message);
+    $("#modal-info").modal("show");
+  }
+}

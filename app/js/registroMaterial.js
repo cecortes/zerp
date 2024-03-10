@@ -4,7 +4,7 @@
 import * as entranceCore from "../js/entranceCore.js";
 
 // Ready function
-$(function () {
+$(async function () {
   /* --> DOM Elements <-- */
   const tipoMaterial = $("#tipo_material");
   const descMaterial = $("#desc_material");
@@ -13,6 +13,27 @@ $(function () {
   const btnAdd = $("#add_entrada");
   const table = $("#table_entradas");
   const btnSave = $("#save_entradas");
+
+  // Global Vars
+  let userId = "";
+  let userName = "";
+  let userMail = "";
+
+  /* --> GetUserName <-- */
+  /* @params: none
+  /* @return: void
+  /* @Calls: entranceCore.
+  /* @action: Get the user name of the current user,
+  /*          and fill the textbox */
+  async function GetUserName() {
+    // Get the user name of the current user
+    let user = await entranceCore.GetUserData();
+
+    // Kept in GlobalVars
+    userId = user.userId;
+    userName = user.userName;
+    userMail = user.userMail;
+  }
 
   /* --> EnabledElements <-- */
   /* @params: none
@@ -126,12 +147,20 @@ $(function () {
   /* @Calls: btnSave on click
   /* @description: Save the data to the database */
   async function SaveEntradas() {
-    console.log("SaveEntradas");
     // Get the rows
     let rows = table.children();
 
     // Create the data array
     let data = [];
+
+    // Add the user data
+    let userData = {
+      userId: userId,
+      userName: userName,
+    };
+
+    // Push the user data
+    data.push(userData);
 
     // Iterate over the formatos
     for (let i = 1; i <= 4; i++) {
@@ -160,7 +189,7 @@ $(function () {
     }
 
     // Test Save Formatos
-    await entranceCore.TestSaveFormatos();
+    //await entranceCore.TestSaveFormatos();
 
     // Iterate over the rows
     rows.each((index, row) => {
@@ -186,6 +215,11 @@ $(function () {
 
     // Save the data
     console.log(obj);
+    console.log(obj.data[0].userId);
+    console.log(obj.data[0].userName);
+    console.log(obj.data[1].Formato);
+    console.log(obj.data[1].src);
+    console.log(obj.data.length);
   }
 
   /* --> Event Handlers <-- */
@@ -232,5 +266,6 @@ $(function () {
   btnSave.on("click", SaveEntradas);
 
   /* --> On Ready <-- */
+  await GetUserName();
   enabledElements();
 });
