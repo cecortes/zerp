@@ -140,3 +140,11 @@
 - [x] Add a function to delete the picture in the main form.
 
 ---
+
+## 10-03-24 (1hr 20min)
+
+- [x] Compare the way to save image in the database.
+- [x] Add a test function to save the image in the database. (DEBUG PURPOSE)
+- [ ] Add a function to save the table data in the database.
+
+---

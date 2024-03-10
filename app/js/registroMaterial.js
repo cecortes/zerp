@@ -1,5 +1,8 @@
 "use strict";
 
+// Imports
+import * as entranceCore from "../js/entranceCore.js";
+
 // Ready function
 $(function () {
   /* --> DOM Elements <-- */
@@ -117,6 +120,74 @@ $(function () {
     btnSave.prop("disabled", false);
   };
 
+  /* --> SaveEntradas <-- */
+  /* @params: none
+  /* @returns: none
+  /* @Calls: btnSave on click
+  /* @description: Save the data to the database */
+  async function SaveEntradas() {
+    console.log("SaveEntradas");
+    // Get the rows
+    let rows = table.children();
+
+    // Create the data array
+    let data = [];
+
+    // Iterate over the formatos
+    for (let i = 1; i <= 4; i++) {
+      // Get the src of the formstos image
+      let src = $(`#formato${i}`).attr("src");
+
+      // Check if the src is empty
+      if (src === "../assets/bg.jpg") {
+        // Create the object
+        let obj = {
+          Formato: "null",
+          src: "",
+        };
+        // Push the object
+        data.push(obj);
+      } else {
+        // Create the object
+        let obj = {
+          Formato: i,
+          src: src,
+        };
+
+        // Push the object
+        data.push(obj);
+      }
+    }
+
+    // Test Save Formatos
+    await entranceCore.TestSaveFormatos();
+
+    // Iterate over the rows
+    rows.each((index, row) => {
+      // Get the cells
+      let cells = $(row).children();
+
+      // Create the object
+      let obj = {
+        tipo: $(cells[0]).text(),
+        desc: $(cells[1]).text(),
+        codigo: $(cells[2]).text(),
+        cantidad: $(cells[3]).text(),
+      };
+
+      // Push the object
+      data.push(obj);
+    });
+
+    // Create the new object
+    let obj = {
+      data: data,
+    };
+
+    // Save the data
+    console.log(obj);
+  }
+
   /* --> Event Handlers <-- */
   tipoMaterial.on("change", enabledElements);
 
@@ -157,6 +228,8 @@ $(function () {
       btnSave.prop("disabled", true);
     }
   });
+
+  btnSave.on("click", SaveEntradas);
 
   /* --> On Ready <-- */
   enabledElements();

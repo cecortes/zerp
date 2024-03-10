@@ -78,3 +78,41 @@ export async function GetUserData() {
     $("#modal-info").modal("show");
   }
 }
+
+/* --> TestSaveFormatos <-- */
+/* @params: array of objects
+/* @returns: none
+/* @actions: Save the formatos to the database */
+export async function TestSaveFormatos() {
+  let imagen = document.getElementById("formato1").src;
+
+  console.log(imagen);
+
+  // Handle error
+  try {
+    // Create a new Parse File
+    let Formato = new Parse.File("formato.jpg", { base64: imagen });
+
+    // Create a new instance of Formatos
+    let FormatoClass = Parse.Object.extend("Formatos");
+
+    let Formato1 = new FormatoClass();
+
+    // Set the data
+    Formato1.set("userId", "TEST");
+    Formato1.set("userName", "TEST");
+    Formato1.set("f1", Formato);
+
+    // Save the data
+    await Formato1.save()
+      .then((Response) => {
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } catch (error) {
+    // Show Modal
+    console.log(error);
+  }
+}
