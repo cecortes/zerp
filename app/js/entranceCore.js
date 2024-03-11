@@ -122,13 +122,6 @@ export async function TestSaveFormatos() {
 /* @returns: none
 /* @actions: Save the data to the database */
 export async function SaveEntradas(data) {
-  console.log(data);
-  /*
-  console.log(data.imagenes[0].userId);
-  console.log(data.imagenes[0].userName);
-  console.log(data.imagenes[1].Formato);
-  console.log(data.imagenes[1].src);
-  */
   // Handle error
   try {
     // Create a new instance of Images class
@@ -184,11 +177,39 @@ export async function SaveEntradas(data) {
     // Save the data
     await newImageEntry
       .save()
-      .then((Response) => {
-        console.log(Response);
+      .then(async (Response) => {
+        // Iterate over the rest of the data
+        for (let i = 17; i < data.imagenes.length; i++) {
+          // Create a new instance of Entradas class
+          let Entradas = Parse.Object.extend("Entradas");
+          let newEntrada = new Entradas();
+
+          // Set the data
+          newEntrada.set("userId", data.imagenes[0].userId);
+          newEntrada.set("userName", data.imagenes[0].userName);
+          newEntrada.set("imagesId", Response.id);
+          newEntrada.set("tipo", data.imagenes[i].tipo);
+          newEntrada.set("descripcion", data.imagenes[i].desc);
+          newEntrada.set("codigo", data.imagenes[i].codigo);
+          newEntrada.set("cantidad", data.imagenes[i].cantidad);
+
+          // Save the data
+          await newEntrada
+            .save()
+            .then((Response) => {})
+            .catch((error) => {
+              // Show Modal
+              $("#modal-title").text("Error de conexión");
+              $("#modal-text").text(error.message);
+              $("#modal-info").modal("show");
+            });
+        }
       })
       .catch((error) => {
-        console.log(error);
+        // Show Modal
+        $("#modal-title").text("Error de conexión");
+        $("#modal-text").text(error.message);
+        $("#modal-info").modal("show");
       });
   } catch (error) {
     // Show Modal

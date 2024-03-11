@@ -141,13 +141,13 @@
 
 ---
 
-## 10-03-24 (1hr 20min)
+## 10-03-24 (3hr 50min)
 
 - [x] Compare the way to save image in the database.
 - [x] Add a test function to save the image in the database. (DEBUG PURPOSE)
 - [x] Modify the bakend to create a single table for all images.
 - [x] Save the images in the backend.
-- [ ] Modify the backend to create a class for each row in the main form.
-- [ ] Add a function to save the table data in the database.
+- [x] Modify the backend to create a class for each row in the main form.
+- [x] Add a function to save the table data in the database.
 
 ---

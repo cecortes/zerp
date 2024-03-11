@@ -13,6 +13,7 @@ $(async function () {
   const btnAdd = $("#add_entrada");
   const table = $("#table_entradas");
   const btnSave = $("#save_entradas");
+  const modalSpinner = $("#modal-spinner");
 
   // Global Vars
   let userId = "";
@@ -147,6 +148,9 @@ $(async function () {
   /* @Calls: btnSave on click
   /* @description: Save the data to the database */
   async function SaveEntradas() {
+    // Show the spinner
+    modalSpinner.modal("show");
+
     // Get the rows
     let rows = table.children();
 
@@ -264,6 +268,9 @@ $(async function () {
 
     // Save the data
     await entranceCore.SaveEntradas(obj);
+
+    // Hide the spinner
+    modalSpinner.modal("hide");
   }
 
   /* --> Event Handlers <-- */
