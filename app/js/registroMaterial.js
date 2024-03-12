@@ -285,16 +285,19 @@ $(async function () {
     // Reset the formatos
     for (let i = 1; i <= 4; i++) {
       $(`#formato${i}`).attr("src", "../assets/bg.jpg");
+      $(`#del-formato${i}`).prop("disabled", true);
     }
 
     // Reset the pallets
     for (let i = 1; i <= 9; i++) {
       $(`#pallet${i}`).attr("src", "../assets/bg.jpg");
+      $(`#del-pallet${i}`).prop("disabled", true);
     }
 
     // Reset the incidencias
     for (let i = 1; i <= 3; i++) {
       $(`#incidencia${i}`).attr("src", "../assets/bg.jpg");
+      $(`#del-incidencia${i}`).prop("disabled", true);
     }
 
     // Clear the table

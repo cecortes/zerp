@@ -152,7 +152,7 @@
 
 ---
 
-## 11-03-24 (5min)
+## 11-03-24 (40min)
 
 - [x] Reset fields and disable takePhoto button every time that modal camera is opened.
 - [x] Make a function to reset all canvas to default.
