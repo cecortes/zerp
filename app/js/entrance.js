@@ -147,6 +147,10 @@ $(async function () {
 
   /* --> Acceso al Stream <-- */
   const getVideo = async () => {
+    // Set the comboType to initial option
+    comboType.prop("selectedIndex", 0);
+    buttonTakeFoto.prop("disabled", true);
+
     await navigator.mediaDevices
       .getUserMedia(constraints)
       .then((stream) => {

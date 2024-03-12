@@ -269,9 +269,41 @@ $(async function () {
     // Save the data
     await entranceCore.SaveEntradas(obj);
 
+    // Reset the fields
+    ResetFields();
+
     // Hide the spinner
     modalSpinner.modal("hide");
   }
+
+  /* --> ResetFields <-- */
+  /* @params: none
+  /* @returns: none
+  /* @Calls: SaveEntradas
+  /* @description: Reset all canvas to default */
+  const ResetFields = () => {
+    // Reset the formatos
+    for (let i = 1; i <= 4; i++) {
+      $(`#formato${i}`).attr("src", "../assets/bg.jpg");
+    }
+
+    // Reset the pallets
+    for (let i = 1; i <= 9; i++) {
+      $(`#pallet${i}`).attr("src", "../assets/bg.jpg");
+    }
+
+    // Reset the incidencias
+    for (let i = 1; i <= 3; i++) {
+      $(`#incidencia${i}`).attr("src", "../assets/bg.jpg");
+    }
+
+    // Clear the table
+    table.empty();
+
+    // Set tipoMaterial to default
+    tipoMaterial.prop("selectedIndex", 0);
+    enabledElements();
+  };
 
   /* --> Event Handlers <-- */
   tipoMaterial.on("change", enabledElements);

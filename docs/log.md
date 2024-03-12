@@ -151,3 +151,12 @@
 - [x] Add a function to save the table data in the database.
 
 ---
+
+## 11-03-24 (5min)
+
+- [x] Reset fields and disable takePhoto button every time that modal camera is opened.
+- [x] Make a function to reset all canvas to default.
+- [x] Make a function to reset all combos to default.
+- [x] Make a function to reset all buttons to default.
+
+---
