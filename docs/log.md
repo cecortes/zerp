@@ -160,3 +160,13 @@
 - [x] Make a function to reset all buttons to default.
 
 ---
+
+## 14-03-24 (1hr)
+
+- [x] Start scketching historial page in excalidraw.
+
+![Skectch](image.png)
+
+- [x] Create the historial page.
+
+---

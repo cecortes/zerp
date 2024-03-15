@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ZMT de México ERP</title>
+
+  <!-- CSS Bootstrap -->
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/panel.css">
+  <link rel="stylesheet" href="../css/modalErrorStyle.css">
+  <link rel="stylesheet" href="../css/popStyles.css">
+  <link rel="stylesheet" href="../css/iconStyles.css">
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/606264bc57.js" crossorigin="anonymous"></script>
+  <!-- Back4App -->
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+  <!-- jQuery -->
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- js -->
+  <script type="module" src="../js/entrance.js"></script>
+  <script type="module" src="../js/registroMaterial.js"></script>
+
+</head>
+<body data-bs-theme="dark">
+  
+  <!-- Top Nav Collapse -->
+  <nav class="navbar bg-body-tertiary fixed-top">
+
+    <!-- Nav Container -->
+    <div class="container-fluid">
+
+      <!-- Title -->
+      <a class="navbar-brand" href="./index.html">ZMT de México</a>
+
+      <!-- Ham button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Offcanvas -->
+      <div class="offcanvas offcanvas-end bg-tertiary" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+        <!-- Header -->
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-success-emphasis" id="offcanvasNavbarLabel">Menú</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="offcanvas-body">
+
+          <!-- Nav -->
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+            <!-- Nav Item Panel -->
+            <li class="nav-item">
+              <a class="nav-link" href="./entrance.html">Panel</a>
+            </li>
+
+            <!-- Nav Item Historial -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./historial.html">Historial</a>
+            </li>
+
+            <!-- Nav Item Reportes -->
+            <li class="nav-item dropdown">
+
+              <!-- Title Reportes -->
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Reportes
+              </a>
+
+              <!-- Dropdown Reportes -->
+              <ul class="dropdown-menu">
+
+                <!-- Dropdown Item Por Fecha-->
+                <li><a class="dropdown-item" href="#">Por fecha</a></li>
+
+                <!-- Divider -->
+                <li>
+                  <!-- Separator -->
+                  <hr class="dropdown-divider">
+                </li>
+
+                <!-- Dropdown Item Por Forja-->
+                <li><a class="dropdown-item" href="#">Por tipo de forja</a></li>
+
+                <!-- Divider -->
+                <li>
+                  <!-- Separator -->
+                  <hr class="dropdown-divider">
+                </li>
+
+                <!-- Dropdown Item Por Resina -->
+                <li><a class="dropdown-item" href="#">Por tipo de resina</a></li>
+
+              </ul>
+
+            </li>
+
+            <!-- Nav Item Logout -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cerrar Sesión</a>
+            </li>
+
+          </ul>
+
+          <!-- Separator -->
+          <hr class="divider">
+
+          <!-- Search Form -->
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Búsqueda..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content d-flex align-items-center min-vh-100" id="panel">
+
+    <!-- Container -->
+    <div class="container-fluid bg-light main-container">
+
+      <!-- Row Table -->
+      <div class="row">
+
+        <!-- Table column -->
+        <div class="col-12 mt-3">
+
+          <!-- Table Card -->
+          <div class="card bg-body-tertiary">
+            
+            <!-- Card Header -->
+            <div class="card-header bg-body-tertiary">
+
+              <!-- Title -->
+              <h5 class="card-title text-success-emphasis">Historial de últimas entradas</h5>
+
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body text-center table-responsive-md">
+
+              <!-- Table -->
+              <table class="table table-striped table-hover table-bordered border-success">
+
+                <thead>
+                  
+                  <tr>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Tipo</th>
+                      <th scope="col">Descripción</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Detalle</th>
+                  </tr>
+
+                </thead>
+
+                <tbody id="table_historial">
+
+                  <!-- Table Row -->
+                  <tr>
+                    <td scope="row" class="text-warning-emphasis bg-secondary">01/01/2021</td>
+                    <td class="text-warning-emphasis bg-secondary">Forja</td>
+                    <td class="text-warning-emphasis bg-secondary">Forja de aluminio</td>
+                    <td class="text-warning-emphasis bg-secondary">1000</td>
+                    <td class="text-warning-emphasis bg-secondary">
+                      <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalDetalle">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Table Row -->
+                  <tr>
+                    <td>01/01/2021</td>
+                    <td>Forja</td>
+                    <td>Forja de aluminio</td>
+                    <td>1000</td>
+                    <td>
+                      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalDetalle">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Table Row -->
+                  <tr>
+                    <td>01/01/2021</td>
+                    <td>Forja</td>
+                    <td>Forja de aluminio</td>
+                    <td>1000</td>
+                    <td>
+                      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalDetalle">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Table Row -->
+                  <tr>
+                    <td scope="row" class="text-warning-emphasis bg-secondary">01/01/2021</td>
+                    <td class="text-warning-emphasis bg-secondary">Forja</td>
+                    <td class="text-warning-emphasis bg-secondary">Forja de aluminio</td>
+                    <td class="text-warning-emphasis bg-secondary">1000</td>
+                    <td class="text-warning-emphasis bg-secondary">
+                      <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalDetalle">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <!-- Table Row -->
+                  <tr>
+                    <td>01/01/2021</td>
+                    <td>Forja</td>
+                    <td>Forja de aluminio</td>
+                    <td>1000</td>
+                    <td>
+                      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalDetalle">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JS Bootstrap -->
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
