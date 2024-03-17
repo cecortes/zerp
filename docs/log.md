@@ -170,3 +170,12 @@
 - [x] Create the historial page.
 
 ---
+
+## 16-03-24 (2hrs 50min)
+
+- [x] Create historialCore.js and historial.js.
+- [x] link the historial.js to the historial page.
+- [x] Add a function to get the data from the database.
+- [x] Add a function to fill the table with the data from the database.
+
+---
